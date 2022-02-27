@@ -3,7 +3,7 @@ import re
 
 output = []
 
-with open("show fulltech E5520-TMC-GF-SW01.txt","r", encoding='latin-1') as file :
+with open("vosstech.txt","r", encoding='latin-1') as file :
     data= file.read()
     lines = data.split('\n')
     
@@ -15,5 +15,5 @@ for line in lines :
 
 sorted_output = sorted(output, key = (lambda x : x['TxDiff']), reverse = True) 
 
-with open("sort_by_TxDiff_result.json","w") as file :
+with open("TxDiff_result.json","w") as file :
     file.write(json.dumps(sorted_output, indent = 4)) 
